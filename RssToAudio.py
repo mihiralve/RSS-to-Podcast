@@ -15,7 +15,6 @@ mercuryAPI = config.get("auth", "mercury_key" )
 mercury = ParserAPI(mercuryAPI)
 
 feed = feedparser.parse("http://feeds.bbci.co.uk/news/rss.xml")
-#AudioSegment.converter = "C:\\Users\\mihir\\ffmpeg\\bin\\ffmpeg"
 
 
 numArticles = 0
@@ -44,22 +43,6 @@ for article in feed.entries:
 
                 output = gTTS(text=articleText, lang="en")
                 output.save(filename)
-
-
-
-                #articleWav = AudioSegment.from_file(filename)
-
-                # y, sr = sf.read(filename)
-                # y_stretch = pyrb.time_stretch(y, sr, 2.0)
-
-
-
-                #articleWav.speedup(2.0)
-
-
-                #articleWav = speedUp(articleWav)
-
-                #articleWav.export(filename, format="wav")
 
 
 
